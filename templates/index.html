@@ -13,8 +13,12 @@
                 retention. Our intuitive interface and powerful features enable you to master new subjects and remember crucial details easily.
                 Whether you are a student preparing for exams, a professional learning new skills or simply just curious about expanding your knowledge,
                 SmartStudy is here to make learning engaging, effective and tailored to your unique style. Start exploring today! and discover the future of learing at your fingertips".</p>
-              <button class="btn"><a href="/website/templates/flash.html">Click Here To Get Started</a></button>
-              <img src="/website/templates/smartStudy. avif.avif"  alt="StudyImage">
+              <button class="btn">
+                <a href="{{ url_for('templates', filename='flash.html')}}">
+                    Click Here To Get Started
+                </a>
+            </button>
+              <img src="{{ url_for('static', filename='smartStudy.avif')}}"  alt="StudyImage">
         </div>
         
     </div>
