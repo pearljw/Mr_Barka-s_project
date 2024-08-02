@@ -3,7 +3,6 @@ import mysql.connector
 from flask import Flask, render_template, request, redirect, url_for
 
 
-
 def create_app():
     """Flash Card project"""
     
