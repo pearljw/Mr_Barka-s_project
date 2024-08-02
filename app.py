@@ -1,6 +1,7 @@
-import sqlite3
+# import sqlite3
+import mysql.connector
 from flask import Flask, render_template, request, redirect, url_for
-# import mysql.connector
+
 
 
 def create_app():
@@ -9,20 +10,20 @@ def create_app():
     app = Flask(__name__, template_folder='templates', static_folder='static')
 
     # Database connection
-    # db = mysql.connector.connect(
-    #     host="localhost",
-    #     user="root",
-    #     password="",
-    #     database="flash_card_project"
-    # )
+    db = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="flash_card_project"
+    )
     
     # SQLite database connection
-    db_path = 'flash_card_project.db'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_path}'
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    # db_path = 'flash_card_project.db'
+    # app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_path}'
+    # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-    # Initialize database
-    db = sqlite3.connect(db_path)
+    # # Initialize database
+    # db = sqlite3.connect(db_path)
     cursor = db.cursor()
 
     # Index route - show landing page
