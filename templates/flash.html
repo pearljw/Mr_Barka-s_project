@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLASH CARD APP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1;900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="container2">
+        <div class="nav">
+          <h2>Flashcards</h2>
+          <div>
+            <button onclick="showCreateCardBox()">New Card</button>
+            <button onclick="delFlashcards()">Delete Card</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container3">
+      <div class="create-box">
+        <h2 style="text-align: center;color: black;">Create Flashcard</h2>
+        <label for="Question">Question</label>
+        <textarea id="question"></textarea>
+        <br />
+        <label for="Answer">Answer</label>
+        <textarea id="answer"></textarea>
+        <div>
+          <button onclick="addFlashCards()">Save</button>
+          <button onclick="hideCreateBox()">Close</button>
+        </div>
+      </div>
+      <!-- Edit Feature -->
+      <div class="edit-box" style="display:none;">
+        <h2 style="text-align: center;color: black;">Edit Flashcard</h2>
+        <label for="edit-question">Question</label>
+        <textarea id="edit-question"></textarea>
+        <br />
+        <label for="edit-answer">Answer</label>
+        <textarea id="edit-answer"></textarea>
+        <div>
+          <button onclick="saveEdits()">Save</button>
+          <button onclick="hideEditBox()">Close</button>
+        </div>
+      </div>
+
+      <div class="flashcards"></div>
+    </div>
+
+    <button class="btn"><a href="{{ url_for('index') }}">Back to Home page</a></button>
+    <!-- Link to external JS file -->
+    <script src="{{url_for('static', filename='flash.js')}}"></script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Hello there👋</h1>
+      <p>
+        "Welcome to <span>SmartStudy</span>, your personalised learning
+        companion designed to enhance effective study and information retention.
+        Our intuitive interface and powerful features enable you to master new
+        subjects and remember crucial details easily. Whether you are a student
+        preparing for exams, a professional learning new skills or simply just
+        curious about expanding your knowledge, SmartStudy is here to make
+        learning engaging, effective and tailored to your unique style. Start
+        exploring today! and discover the future of learing at your fingertips".
+      </p>
+      <button class="btn">
+        <a href="{{ url_for('flashcards') }}">Click Here To Get Started</a>
+      </button>
+      <img
+        src="{{ url_for('static', filename='smartStudy.avif') }}"
+        alt="StudyImage"
+      />
+    </div>
+  </body>
+</html>
